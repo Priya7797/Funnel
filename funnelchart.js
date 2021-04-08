@@ -111,148 +111,47 @@
 				myChart.style.top = chartTitle.clientHeight - 10 + "px"; 
 			}
 			
+
 			// Themes begin
 			am4core.useTheme(am4themes_animated);
 			// Themes end
 
-			
-			var chart = am4core.create(myChart, am4charts.RadarChart);
-			chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+			let chart = am4core.create("chartdiv", am4charts.SlicedChart);
+			chart.data = [{
+			  "name": "Stage #1",
+			  "value": 600
+			}, {
+			  "name": "Stage #2",
+			  "value": 300
+			}, {
+			  "name": "Stage #3",
+			  "value": 200
+			}, {
+			  "name": "Stage #4",
+			  "value": 180
+			}, {
+			  "name": "Stage #5",
+			  "value": 50
+			}, {
+			  "name": "Stage #6",
+			  "value": 20
+			}, {
+			  "name": "Stage #7",
+			  "value": 10
+			}];
 
-			if(this.datasourceString.trim() === "{}") {
-				chart.data = [
-				  {
-					category: "One",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 8,
-					value2: 2,
-					value3: 4
-				  },
-				  {
-					category: "Two",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 11,
-					value2: 4,
-					value3: 2
-				  },
-				  {
-					category: "Three",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 7,
-					value2: 6,
-					value3: 6
-				  },
-				  {
-					category: "Four",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 13,
-					value2: 8,
-					value3: 3
-				  },
-				  {
-					category: "Five",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 12,
-					value2: 10,
-					value3: 5
-				  },
-				  {
-					category: "Six",
-					measuredescriptions: ["Net Promoter Score", "Detractors", "Promoter"],
-					value1: 15,
-					value2: 12,
-					value3: 4
-				  }
-				];
-			} else {
-				var newDataSourceObj = JSON.parse(this.datasourceString);
-				var newChartData = [];
-				for(var i = 0; i < newDataSourceObj.length; i++) {
-					var dimMemberID = newDataSourceObj[i].dimensions[0].member_id;
-					var dimMemberDesc = newDataSourceObj[i].dimensions[0].member_description;
-					var msrObj = newDataSourceObj[i].measure;
-					if(!newChartData.find(x => x.category_id === dimMemberID)) {
-						var newDataObject = {};
-						newDataObject.category_id = dimMemberID;
-						newDataObject.category = dimMemberDesc;
-						newDataObject.measuredescriptions = [];
-						newDataObject.measuredescriptions.push(msrObj.measure_description);
-						newDataObject.value1 = msrObj.formattedValue;
-						newChartData.push(newDataObject);
-					} else {
-						var existingObj = newChartData.find(x => x.category_id === dimMemberID);
-						existingObj.measuredescriptions.push(msrObj.measure_description);
-						var newProp = "value"+existingObj.measuredescriptions.length;
-						existingObj[newProp] = msrObj.formattedValue;
-					}
-				}
-				chart.data = newChartData;
-			}
-			
-			
+			let series = chart.series.push(new am4charts.FunnelSeries());
+			series.dataFields.value = "value";
+			series.dataFields.category = "name";
 
-			//chart.padding(20, 20, 20, 20);
-			chart.colors.step = 4;
-			
-			var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
-			categoryAxis.dataFields.category = "category";
-			categoryAxis.renderer.labels.template.location = 0.5;
-			categoryAxis.renderer.labels.template.horizontalCenter = "right";
-			categoryAxis.renderer.grid.template.location = 0;
-			categoryAxis.renderer.tooltipLocation = 0.5;
-			categoryAxis.renderer.grid.template.strokeOpacity = 0.07;
-			categoryAxis.renderer.axisFills.template.disabled = true;
-			categoryAxis.interactionsEnabled = false;
-			categoryAxis.renderer.minGridDistance = 10;
+			var fillModifier = new am4core.LinearGradientModifier();
+			fillModifier.brightnesses = [-0.5, 1, -0.5];
+			fillModifier.offsets = [0, 0.5, 1];
+			series.slices.template.fillModifier = fillModifier;
+			series.alignLabels = true;
 
-			var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-			valueAxis.tooltip.disabled = true;
-			valueAxis.renderer.labels.template.horizontalCenter = "left";
-			valueAxis.min = 0.0;
-			var measuresSum = [];
-			for(var e = 0; e < chart.data.length; e++) {
-				var msrSum = 0;
-				for(var m = 0; m < chart.data[0].measuredescriptions.length; m++) {
-					var valNum = "value" + (m+1);
-					msrSum = msrSum + parseFloat(chart.data[e][valNum])
-				}
-				measuresSum.push(msrSum);
-			}
-			valueAxis.max = Math.floor(Math.max(...measuresSum)) * 1.02;
-			valueAxis.strictMinMax = false;
-			valueAxis.renderer.maxLabelPosition = 1;
-			valueAxis.renderer.minGridDistance = Math.floor(valueAxis.max * 0.1);
-			valueAxis.renderer.grid.template.strokeOpacity = 0.07;
-			valueAxis.renderer.axisFills.template.disabled = true;
-			valueAxis.interactionsEnabled = false;
+			series.labels.template.text = "{category}: [bold]{value}[/]";
 
-			var seriesColors = this._series1Color.split(";");
-			for(var k = 0; k < chart.data[0].measuredescriptions.length; k++) {
-				var series1 = chart.series.push(new am4charts.RadarColumnSeries());
-				series1.columns.template.tooltipText = "{name}: {valueX.value}";
-				series1.name = chart.data[0].measuredescriptions[k];
-				series1.dataFields.categoryY = "category";
-				series1.dataFields.valueX = "value"+(k+1);
-				series1.stacked = true;
-				series1.columns.template.fill = am4core.color(seriesColors[k]);
-			}
-			
-			chart.seriesContainer.zIndex = -1;
-			
-			
-			/*for(var sc = 0; sc < seriesColors.length; sc++) {
-				chart.series[sc].columns.template.fill = am4core.color(seriesColors[sc]);
-			}*/
-			
-			chart.endAngle = 180;
-			chart.innerRadius = am4core.percent(20);
-
-			chart.cursor = new am4charts.RadarCursor();
-			chart.cursor.lineY.disabled = true;
-
-		}
-	
-	}
-
+			}); // end am4core.ready()
 	customElements.define("com-bva4kor-sac-radialbarchart", RadialBarChart);
 })();
