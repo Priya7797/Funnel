@@ -141,37 +141,14 @@ function loadScript(src) {
 // Themes begin
 am4core.useTheme(am4themes_animated);
 // Themes end
-AmCharts.addInitHandler( function( chart ) {
 
-	// Check if `orderByField` is set
-	if ( chart.orderByField === undefined ) {
-	  // Nope - do nothing
-	  return;
-	}
-  
-	// Re-order the data provider
-	chart.dataProvider.sort( function( a, b ) {
-	  if ( a[ chart.orderByField ] > b[ chart.orderByField ] ) {
-		return -1;
-	  } else if ( a[ chart.orderByField ] == b[ chart.orderByField ] ) {
-		return 0;
-	  }
-	  return 1;
-	} );
-  
-  }, [ "serial" ] );
-  
 // Create chart
 var chart = am4core.create(myChart, am4charts.SlicedChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
 if(this.datasourceString.trim() === "{}") { 
-	var chart = AmCharts.makeChart( "chartdiv", {
-		"type": "serial",
-		"theme": "light",
-		"orderByField": "visits",
-		"dataProvider": [ {
-  //chart.data = [{
+
+  chart.data = [{
     "name": "Stage #1",
     "value": 600
   }, {
