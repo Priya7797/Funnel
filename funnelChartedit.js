@@ -220,7 +220,17 @@ chart.legend.valign = "bottom";
 chart.legend.margin(5,5,20,5);
 
 //sorted order of funnel chart
-
+function compare( a, b ) {
+	if ( a.country < b.country ){
+	  return -1;
+	}
+	if ( a.country > b.country ){
+	  return 1;
+	}
+	return 0;
+  }
+  
+  chart.data.sort(compare)
 
 // end am4core.ready()
         }	
