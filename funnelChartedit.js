@@ -32,7 +32,7 @@ function loadScript(src) {
 		});
 	}	
 
-    customElements.define('com-sap-sample-piechart', class WidgetTemplate extends HTMLElement {
+    customElements.define('com-sap-sample-funnelchart', class WidgetTemplate extends HTMLElement {
 
 
 		constructor() {
