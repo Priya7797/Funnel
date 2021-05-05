@@ -219,11 +219,8 @@ chart.legend.valign = "bottom";
 chart.legend.margin(5,5,20,5);
 
 //sorted order of funnel chart
-chart.events.on("beforedatavalidated", function(ev) {
-	chart.data.sort(function(a, b) {
-	  return (new Date(a.value)) - (new Date(b.value));
-	});
-  });
+var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+categoryAxis.sortBySeries = series;
 
 
 // end am4core.ready()
