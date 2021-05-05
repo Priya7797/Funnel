@@ -221,10 +221,10 @@ chart.legend.margin(5,5,20,5);
 
 //sorted order of funnel chart
 function compare( a, b ) {
-	if ( a.country < b.country ){
+	if ( a.value < b.value ){
 	  return -1;
 	}
-	if ( a.country > b.country ){
+	if ( a.value > b.value ){
 	  return 1;
 	}
 	return 0;
