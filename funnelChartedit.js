@@ -201,20 +201,6 @@ else {
 				
 
 }
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = "country";
-categoryAxis.renderer.minGridDistance = 60;
-categoryAxis.renderer.inversed = true;
-categoryAxis.renderer.labels.template.location = 0.5;
-categoryAxis.renderer.grid.template.strokeOpacity = 0.08;
-
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.min = 0;
-valueAxis.extraMax = 0.1;
-valueAxis.renderer.grid.template.strokeOpacity = 0.08;
-
-chart.seriesContainer.zIndex = -10;
 
 let series = chart.series.push(new am4charts.FunnelSeries());
 series.dataFields.value = "value";
@@ -227,8 +213,6 @@ series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
 series.labels.template.text = "{category}: [bold]{value}[/]";
-
-categoryAxis.sortBySeries = series;
 
 chart.legend = new am4charts.Legend();
 chart.legend.position = "left";
