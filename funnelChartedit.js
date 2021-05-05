@@ -212,6 +212,11 @@ series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
 series.labels.template.text = "{category}: [bold]{value}[/]";
+
+chart.legend = new am4charts.Legend();
+chart.legend.position = "left";
+chart.legend.valign = "bottom";
+chart.legend.margin(5,5,20,5);
 // end am4core.ready()
         }
     
