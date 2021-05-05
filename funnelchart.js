@@ -153,5 +153,5 @@
 			series.labels.template.text = "{category}: [bold]{value}[/]";
 
 			}); // end am4core.ready()
-	customElements.define("com-bva4kor-sac-radialbarchart", RadialBarChart);
+	customElements.define("com-sap-sample-funnelchart", RadialBarChart);
 })();
