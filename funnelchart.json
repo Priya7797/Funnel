@@ -19,14 +19,14 @@
 		{
 			"kind": "styling",
 			"tag": "com-sap-sample-funnelchart-styling",
-			"url": "https://priya7797.github.io/Funnel/funnelchartbuilder.js",
+			"url": "https://priya7797.github.io/Funnel/funnelchartstyling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
 			"tag": "com-sap-sample-funnelchart-builder",
-			"url": "https://priya7797.github.io/Funnel/funnelchartstyling.js",
+			"url": "https://priya7797.github.io/Funnel/funnelchartbuilder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
