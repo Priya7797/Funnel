@@ -201,10 +201,20 @@ else {
 				
 
 }
+		
+		
+var seriesColors = this._series1Color.split(";");
+for (i = 0; i < seriesColors.length; i++) {
+	seriesColors[i] = am4core.color(seriesColors[i]);
+}
+console.log(seriesColors);
+		
+		
 
 let series = chart.series.push(new am4charts.FunnelSeries());
 series.dataFields.value = "value";
 series.dataFields.category = "name";
+series.colors.list = seriesColors;
 
 var fillModifier = new am4core.LinearGradientModifier();
 fillModifier.brightnesses = [-0.5, 1, -0.5];
