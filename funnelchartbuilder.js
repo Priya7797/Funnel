@@ -59,5 +59,5 @@
 		}
 	}
 
-	customElements.define("com-bva4kor-sac-radialbarchart-builder", RadialBarChartBuilderPanel);
+	customElements.define("com-sap-sample-funnelchart-builder", RadialBarChartBuilderPanel);
 })();

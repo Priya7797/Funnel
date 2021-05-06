@@ -18,15 +18,15 @@
         },
 		{
 			"kind": "styling",
-			"tag": "com-sap-sample-piechart-styling",
-			"url": "https://priya7797.github.io/radiuspiechart/demopiechartstyling.js",
+			"tag": "com-sap-sample-funnelchart-styling",
+			"url": "https://priya7797.github.io/Funnel/funnelchartbuilder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
-			"tag": "com-sap-sample-piechart-builder",
-			"url": "https://priya7797.github.io/radiuspiechart/demupiechartbuilder.js",
+			"tag": "com-sap-sample-funnelchart-builder",
+			"url": "https://priya7797.github.io/Funnel/funnelchartstyling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}

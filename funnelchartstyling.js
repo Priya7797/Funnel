@@ -43,5 +43,5 @@
 		}
 	}
 
-customElements.define("com-sap-sample-piechart-styling", RadialBarChartStylingPanel);
+customElements.define("com-sap-sample-funnelchart-styling", RadialBarChartStylingPanel);
 })();
