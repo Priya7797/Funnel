@@ -251,6 +251,7 @@ if(this._legendValue == false){
 	// series.labels.template.maxWidth = 60
 	series.dataFields.value = "value";
 	series.dataFields.category = "name";
+	series.alignLabels = false;
 	
 }
 else
