@@ -249,18 +249,6 @@ if(this._legendValue == false){
 	
 }
 
-if(this._radioValue == true)
-	series.labels.template.text = inculde_category+ "{value}";
-
-	else if(this._radioPercent == true)
-		series.labels.template.text = inculde_category+"{value.percent.formatNumber('#.0')}%";
-	else if(this._radioCombination == true)
-		series.labels.template.text = inculde_category+"{value.percent.formatNumber('#.0')}% ({value})";
-	else
-		series.labels.template.text = inculde_category+ "{value.percent.formatNumber('#.0')}%";
-
-
-
 //sorted order of funnel chart
 function compare( a, b ) {
 	if ( a.value > b.value ){
