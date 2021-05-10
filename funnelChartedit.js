@@ -232,7 +232,7 @@ if(this._statusCheckBox == true){
 	var markerTemplate = chart.legend.markers.template;
 	markerTemplate.width = 10;
 	markerTemplate.height = 10;
-	chart.legend.maxHeight = 50;
+	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
 	}
 /*chart.legend = new am4charts.Legend();
