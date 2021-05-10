@@ -97,5 +97,5 @@
 		
 	}
 	 
-	customElements.define("com-sap-sample-piechart-builder", RadiusPieChartBuilderPanel);
+	customElements.define("com-sap-sample-funnelchart-builder", RadiusPieChartBuilderPanel);
 })();
