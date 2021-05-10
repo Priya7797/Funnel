@@ -43,6 +43,23 @@
 			"description": "DataSource ResultSet String",
 			"default": false
 		},
+		"radiovalue": {
+			"type": "boolean",
+			"description": "shows value",
+			"default": false
+		},
+
+		"radiopercent": {
+			"type": "boolean",
+			"description": "shows percentage",
+			"default": false
+		},
+
+		"radiocombination": {
+			"type": "boolean",
+			"description": "shows combination",
+			"default": false
+		},
 	
 		"datasourceString": {
 			"type": "string",
@@ -173,6 +190,60 @@
 			"returnType": "boolean",
 			"description": "Set CheckBox status",
 			"body": "return this.legendvalue;"
+		},
+
+		"setradiovalue": {
+			"description": "Sets value of radio button",
+			"parameters": [
+				{
+					"name": "newradiovalue",
+					"type": "boolean",
+					"description": "Status Change"
+				}
+			],
+			"body": "this.radiovalue = newradiovalue;"
+		},
+		
+		"getradiovalue": {
+			"returnType": "boolean",
+			"description": "get radio value",
+			"body": "return this.radiovalue;"
+		},
+
+		"setradiopercent": {
+			"description": "Set percentage of legend",
+			"parameters": [
+				{
+					"name": "newradiopercent",
+					"type": "boolean",
+					"description": "percent"
+				}
+			],
+			"body": "this.radiopercent = newradiopercent;"
+		},
+		
+		"getradiopercent": {
+			"returnType": "boolean",
+			"description": "get percentage of legend",
+			"body": "return this.radiopercent;"
+		},
+
+		"setradiocombination": {
+			"description": "Set combination of legend value",
+			"parameters": [
+				{
+					"name": "newradiocombination",
+					"type": "boolean",
+					"description": "Status Change"
+				}
+			],
+			"body": "this.radiocombination = newradiocombination;"
+		},
+		
+		"getradiocombination": {
+			"returnType": "boolean",
+			"description": "get both value and percentage",
+			"body": "return this.radiocombination;"
 		}
 		
 		
