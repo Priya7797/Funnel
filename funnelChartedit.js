@@ -246,7 +246,6 @@ if(this._legendValue == false){
 	series.labels.template.fill = am4core.color("white");
 	series.labels.template.fontSize = 11;
 	series.labels.template.maxWidth = 60
-	inculde_category="";
 	
 }
 
