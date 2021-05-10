@@ -222,7 +222,7 @@ fillModifier.offsets = [0, 0.5, 1];
 series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
-series.labels.template.text = "{category}: [bold]{value}[/]";
+//series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
 	chart.legend = new am4charts.Legend();
 	chart.legend.position = "left";
@@ -249,6 +249,17 @@ if(this._legendValue == false){
 	//series.labels.template.fontSize = 11;
 	//series.labels.template.maxWidth = 60	
 }
+
+if(this._radioValue == true)
+	series.labels.template.text = "{category}: [bold]{value}[/]";
+
+	else if(this._radioPercent == true)
+		series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}%";
+	else if(this._radioCombination == true)
+		series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}% ({value})";
+	else
+		series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}%";
+
 
 
 //sorted order of funnel chart
