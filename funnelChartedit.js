@@ -222,7 +222,7 @@ fillModifier.offsets = [0, 0.5, 1];
 series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
-// series.labels.template.text = "{category}: [bold]{value}[/]";
+series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
 	chart.legend = new am4charts.Legend();
 	chart.legend.position = "left";
@@ -241,21 +241,15 @@ chart.legend.valign = "bottom";
 chart.legend.margin(5,5,20,5);*/
 
 if(this._legendValue == false){
-	// series.labels.template.text = "[bold]{value}[/]";
-	// series.ticks.template.disabled = true;
-	// series.alignLabels = false;
-	// series.labels.template.relativeRotation = 90;
-	// series.labels.template.radius = am4core.percent(-50);
-	// series.labels.template.fill = am4core.color("white");
-	// series.labels.template.fontSize = 11;
-	// series.labels.template.maxWidth = 60
-	series.dataFields.value = "value";
-	series.dataFields.category = "name";
+	series.ticks.template.disabled = true;
 	series.alignLabels = false;
-	
+	//series.labels.template.relativeRotation = 90;
+	//series.labels.template.radius = am4core.percent(-50);
+	//series.labels.template.fill = am4core.color("white");
+	//series.labels.template.fontSize = 11;
+	//series.labels.template.maxWidth = 60	
 }
-else
-	series.labels.template.text = "{category}: [bold]{value}[/]";
+
 
 //sorted order of funnel chart
 function compare( a, b ) {
