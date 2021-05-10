@@ -258,16 +258,13 @@ if(this._radioValue == true){
 	else if(this._radioPercent == true)
 		{
 			series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}%";
-			chart.legend.labels.template.text= "{category}: [bold]{value.percent.formatNumber('#.0')}%";
 		}
 	else if(this._radioCombination == true){
 		series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}% ({value})";
-		chart.legend.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}% ({value})";
 		}
 	else
 	{
 		series.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}%";
-		chart.legend.labels.template.text = "{category}: [bold]{value.percent.formatNumber('#.0')}%";
 
 	}
 
