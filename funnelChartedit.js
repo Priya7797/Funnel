@@ -241,14 +241,16 @@ chart.legend.valign = "bottom";
 chart.legend.margin(5,5,20,5);*/
 
 if(this._legendValue == false){
-	series.labels.template.text = "[bold]{value}[/]";
-	series.ticks.template.disabled = true;
-	series.alignLabels = false;
-	series.labels.template.relativeRotation = 90;
-	series.labels.template.radius = am4core.percent(-50);
-	series.labels.template.fill = am4core.color("white");
-	series.labels.template.fontSize = 11;
-	series.labels.template.maxWidth = 60
+	// series.labels.template.text = "[bold]{value}[/]";
+	// series.ticks.template.disabled = true;
+	// series.alignLabels = false;
+	// series.labels.template.relativeRotation = 90;
+	// series.labels.template.radius = am4core.percent(-50);
+	// series.labels.template.fill = am4core.color("white");
+	// series.labels.template.fontSize = 11;
+	// series.labels.template.maxWidth = 60
+	series.dataFields.value = "value";
+	series.dataFields.category = "name";
 	
 }
 else
