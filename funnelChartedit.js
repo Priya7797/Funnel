@@ -234,6 +234,7 @@ if(this._statusCheckBox == true){
 	markerTemplate.height = 10;
 	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
+	chart.legend.labels.template.text = "{category}";
 	}
 /*chart.legend = new am4charts.Legend();
 chart.legend.position = "left";
