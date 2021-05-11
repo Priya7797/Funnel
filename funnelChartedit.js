@@ -244,7 +244,6 @@ if(this._statusCheckBox == true){
 	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
 	console.log("Print Cat");
-	console.log({category});
 	chart.legend.labels.template.text = "{name}";
 	series.legendSettings.labelText = "{name}";
 
