@@ -271,6 +271,7 @@ if(this._radioValue == true){
 function compare( a, b ) {
 	console.log("Vaule of First : " + a.value);
 	console.log("Vaule of Scond : " + b.value);
+	console.log("Vaule of Type: " + typeof(a.value));
 	if ( a.value > b.value ){
 	  return -1;
 	}
