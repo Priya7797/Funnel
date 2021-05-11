@@ -269,13 +269,13 @@ if(this._radioValue == true){
 
 //sorted order of funnel chart
 function compare( a, b ) {
-	console.log("Vaule of First : " + a.value);
-	console.log("Vaule of Scond : " + b.value);
-	console.log("Vaule of Type: " + typeof(a.value));
-	if ( a.value > b.value ){
+	let value1 = parseInt(a.value);
+	let value2 = parseInt(b.value);
+
+	if ( value1 > value2 ){
 	  return -1;
 	}
-	if ( a.value < b.value ){
+	if ( value1 < value2 ){
 	  return 1;
 	}
 	return 0;
