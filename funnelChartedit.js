@@ -230,7 +230,7 @@ series.alignLabels = true;
 // markerTemplate.height = 10;
 // }
 
-series.legendSettings.labelText = "{name}";
+series.legendSettings.labelText = "{category}";
 //series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
 	chart.legend = new am4charts.Legend();
