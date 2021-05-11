@@ -245,8 +245,8 @@ if(this._statusCheckBox == true){
 	chart.legend.scrollable = true;
 	console.log("Print Cat");
 	// chart.legend.labels.template.text = "{name}";
-	series.legendSettings.labelText = "{name}";
-	series.legendSettings.itemValueText = "";
+	// series.legendSettings.labelText = "{name}";
+	series.legendSettings.itemValueText = "{name}";
 
 	}
 /*chart.legend = new am4charts.Legend();
