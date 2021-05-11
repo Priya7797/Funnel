@@ -280,7 +280,7 @@ function compare( a, b ) {
   }
   
   chart.data.sort(compare)
-
+  console.log(chart.data);
 // end am4core.ready()
         }	
     
