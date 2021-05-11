@@ -230,7 +230,7 @@ series.alignLabels = true;
 // markerTemplate.height = 10;
 // }
 
-//series.legendSettings.labelText = "{category}";
+series.legendSettings.labelText = "{name}";
 //series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
 	chart.legend = new am4charts.Legend();
@@ -244,8 +244,10 @@ if(this._statusCheckBox == true){
 	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
 	console.log("Print Cat");
-	console.log("{category}");
-	chart.legend.labels.template.text = "{value}";
+	console.log({category});
+	chart.legend.labels.template.text = "{name}";
+	series.legendSettings.labelText = "{name}";
+
 	}
 /*chart.legend = new am4charts.Legend();
 chart.legend.position = "left";
