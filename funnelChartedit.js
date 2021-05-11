@@ -222,21 +222,29 @@ fillModifier.offsets = [0, 0.5, 1];
 series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
-series.legendSettings.labelText = "{category}";
-//series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
-	chart.legend = new am4charts.Legend();
-	chart.legend.position = "left";
-	chart.legend.valign = "bottom";
-	chart.legend.margin(5,5,20,5);
-	chart.legend.fontSize = 10;
-	var markerTemplate = chart.legend.markers.template;
-	markerTemplate.width = 10;
-	markerTemplate.height = 10;
-	//chart.legend.maxHeight = 50;
-	chart.legend.scrollable = true;
-	chart.legend.labels.template.text = "{category}";
-	}
+chart.legend = new am4charts.Legend();
+chart.legend.fontSize = 10;
+var markerTemplate = chart.legend.markers.template;
+markerTemplate.width = 10;
+markerTemplate.height = 10;
+}
+
+//series.legendSettings.labelText = "{category}";
+//series.labels.template.text = "{category}: [bold]{value}[/]";
+// if(this._statusCheckBox == true){
+// 	chart.legend = new am4charts.Legend();
+// 	chart.legend.position = "left";
+// 	chart.legend.valign = "bottom";
+// 	chart.legend.margin(5,5,20,5);
+// 	chart.legend.fontSize = 10;
+// 	var markerTemplate = chart.legend.markers.template;
+// 	markerTemplate.width = 10;
+// 	markerTemplate.height = 10;
+// 	//chart.legend.maxHeight = 50;
+// 	chart.legend.scrollable = true;
+// 	chart.legend.labels.template.text = "{category}";
+// 	}
 /*chart.legend = new am4charts.Legend();
 chart.legend.position = "left";
 chart.legend.valign = "bottom";
