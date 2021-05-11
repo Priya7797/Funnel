@@ -246,7 +246,7 @@ if(this._statusCheckBox == true){
 	console.log("Print Cat");
 	// chart.legend.labels.template.text = "{name}";
 	series.legendSettings.labelText = "{name}";
-	series.legendSettings.itemValueText = "0.0";
+	series.legendSettings.itemValueText = "";
 
 	}
 /*chart.legend = new am4charts.Legend();
