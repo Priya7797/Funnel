@@ -156,7 +156,7 @@ if(this.datasourceString.trim() === "{}") {
     "value": 300
   }, {
     "name": "Stage #3",
-    "value": 200
+    "value": 60
   }, {
     "name": "Stage #4",
     "value": 180
