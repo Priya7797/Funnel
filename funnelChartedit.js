@@ -244,8 +244,9 @@ if(this._statusCheckBox == true){
 	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
 	console.log("Print Cat");
-	chart.legend.labels.template.text = "{name}";
+	// chart.legend.labels.template.text = "{name}";
 	series.legendSettings.labelText = "{name}";
+	series.legendSettings.valueText = "";
 
 	}
 /*chart.legend = new am4charts.Legend();
