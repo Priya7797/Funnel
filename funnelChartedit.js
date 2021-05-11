@@ -222,6 +222,7 @@ fillModifier.offsets = [0, 0.5, 1];
 series.slices.template.fillModifier = fillModifier;
 series.alignLabels = true;
 
+series.legendSettings.labelText = "{category}";
 //series.labels.template.text = "{category}: [bold]{value}[/]";
 if(this._statusCheckBox == true){
 	chart.legend = new am4charts.Legend();
@@ -235,7 +236,6 @@ if(this._statusCheckBox == true){
 	//chart.legend.maxHeight = 50;
 	chart.legend.scrollable = true;
 	chart.legend.labels.template.text = "{category}";
-	series.legendSettings.labelText = "{category}";
 	}
 /*chart.legend = new am4charts.Legend();
 chart.legend.position = "left";
