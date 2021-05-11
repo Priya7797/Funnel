@@ -269,8 +269,8 @@ if(this._radioValue == true){
 
 //sorted order of funnel chart
 function compare( a, b ) {
-	let value1 = parseInt(a.value);
-	let value2 = parseInt(b.value);
+	let value1 = parseFloat(a.value);
+	let value2 = parseFloat(b.value);
 
 	if ( value1 > value2 ){
 	  return -1;
