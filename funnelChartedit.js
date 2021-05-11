@@ -252,7 +252,6 @@ if(this._legendValue == false){
 
 if(this._radioValue == true){
 	series.labels.template.text = "{category}: [bold]{value}[/]";
-	series.labels.template.text = "{category}: {value}";
 }
 
 	else if(this._radioPercent == true)
@@ -270,6 +269,8 @@ if(this._radioValue == true){
 
 //sorted order of funnel chart
 function compare( a, b ) {
+	console.log("Vaule of First : " + a.value);
+	console.log("Vaule of Scond : " + b.value);
 	if ( a.value > b.value ){
 	  return -1;
 	}
@@ -280,6 +281,7 @@ function compare( a, b ) {
   }
   
   chart.data.sort(compare)
+  console.log("Chart Data after sorting");
   console.log(chart.data);
 // end am4core.ready()
         }	
