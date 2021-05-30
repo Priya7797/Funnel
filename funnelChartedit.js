@@ -209,9 +209,13 @@ for (i = 0; i < seriesColors.length; i++) {
 }
 console.log(seriesColors);
 		
-		
+var series = chart.series.push(new am4charts.FunnelSeries());
+series.colors.step = 2;
+series.dataFields.value = "value";
+series.dataFields.category = "name";
+series.alignLabels = true;		
 
-let series = chart.series.push(new am4charts.FunnelSeries());
+/*let series = chart.series.push(new am4charts.FunnelSeries());
 series.dataFields.value = "value";
 series.dataFields.category = "name";
 series.colors.list = seriesColors;
@@ -220,15 +224,9 @@ var fillModifier = new am4core.LinearGradientModifier();
 fillModifier.brightnesses = [-0.5, 1, -0.5];
 fillModifier.offsets = [0, 0.5, 1];
 series.slices.template.fillModifier = fillModifier;
-series.alignLabels = true;
+series.alignLabels = true; */
 
-// if(this._statusCheckBox == true){
-// chart.legend = new am4charts.Legend();
-// chart.legend.fontSize = 10;
-// var markerTemplate = chart.legend.markers.template;
-// markerTemplate.width = 10;
-// markerTemplate.height = 10;
-// }
+
 
 series.legendSettings.labelText = "{category}";
 //series.labels.template.text = "{category}: [bold]{value}[/]";
